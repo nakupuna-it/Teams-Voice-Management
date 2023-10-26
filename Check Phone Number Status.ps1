@@ -5,8 +5,12 @@ $LinePre = "tel:"
 $Result = $null
 
 #Prompt for phone number and store it as the $LineURI variable
-$LineURI = Read-Host -prompt 'Please enter the phone number you want to look up in E164 format(ie 1XXXYYYZZZZ)'
+$LineURI = Read-Host -Prompt 'Please enter the phone number you want to look up in E164 format(ie 1XXXYYYZZZZ)'
 
+
+###########################
+##### RUN THE COMMAND #####
+###########################
 #Lookup the number and store the result as the $Result variable
 $Result = Get-CsOnlineUser -Filter "LineURI -eq `"$LinePre$LineURI`""
 
